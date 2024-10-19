@@ -51,7 +51,7 @@ jobs:
       - name: Sync built files to gh-pages
         run: |
           rm -rf *
-          cp -r site/* .  # Adjust this path according to where your build output is
+          cp -r /home/runner/work/pages-test/pages-test/site/* .  # Adjust this path according to where your build output is
           git add .
 
       - name: Commit and Push changes to gh-pages
