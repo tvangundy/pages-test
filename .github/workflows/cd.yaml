@@ -51,7 +51,7 @@ jobs:
       - name: Sync built files to gh-pages
         run: |
           rm -rf *
-          cp -r path/to/built/site/* .  # Adjust this path according to where your build output is
+          cp -r site/* .  # Adjust this path according to where your build output is
           git add .
 
       - name: Commit and Push changes to gh-pages
@@ -60,4 +60,3 @@ jobs:
           git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
