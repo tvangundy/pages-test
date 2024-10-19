@@ -9,10 +9,32 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Generate hash of .tool-versions
+        run: echo "hash=$(sha256sum .tool-versions | cut -d ' ' -f 1)" >> $GITHUB_ENV
+
+      - name: Cache asdf tools
+        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+        with:
+          path: ~/.asdf
+          key: ${{ runner.os }}-asdf-${{ env.hash }}
+          restore-keys: |
+            ${{ runner.os }}-asdf-
+
+      - name: Install asdf
+        uses: asdf-vm/actions/plugins-add@05e0d2ed97b598bfce82fd30daf324ae0c4570e6 # v3.0.2
+
+      - name: Install asdf ci tools
+        run: |
+          asdf install
+          echo "PATH=$HOME/.asdf/shims:$PATH" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: task install-mkdocs
+
       - name: Build the project
         run: task build
+
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
