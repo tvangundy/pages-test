@@ -26,6 +26,7 @@ tasks:
     cmds:
       - mkdir -p site
       - mkdocs build
+      - ls site
     silent: true
 
   serve:
