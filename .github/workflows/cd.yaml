@@ -1,11 +1,14 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches:
-      - main
+      - main  # Trigger the action on push to main branch
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -14,7 +17,7 @@ jobs:
         run: echo "hash=$(sha256sum .tool-versions | cut -d ' ' -f 1)" >> $GITHUB_ENV
 
       - name: Cache asdf tools
-        uses: actions/cache@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+        uses: actions/cache@v2
         with:
           path: ~/.asdf
           key: ${{ runner.os }}-asdf-${{ env.hash }}
@@ -22,7 +25,7 @@ jobs:
             ${{ runner.os }}-asdf-
 
       - name: Install asdf
-        uses: asdf-vm/actions/plugins-add@05e0d2ed97b598bfce82fd30daf324ae0c4570e6 # v3.0.2
+        uses: asdf-vm/actions/plugins-add@v1
 
       - name: Install asdf ci tools
         run: |
@@ -40,17 +43,21 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
+      - name: Checkout gh-pages branch
+        run: |
+          git fetch origin gh-pages || echo "gh-pages branch does not exist yet."
+          git checkout gh-pages || git checkout --orphan gh-pages
+
+      - name: Sync built files to gh-pages
+        run: |
+          rm -rf *
+          cp -r path/to/built/site/* .  # Adjust this path according to where your build output is
+          git add .
+
       - name: Commit and Push changes to gh-pages
         run: |
-          git checkout -b gh-pages
-          git add .
           git commit -m "Deploying to GitHub Pages"
           git push origin gh-pages --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Deploy to gh-pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./site
+          
