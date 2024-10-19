@@ -1,0 +1,48 @@
+---
+version: "3"
+
+vars:
+  PROJECT_ROOT:
+    sh: git rev-parse --show-toplevel
+
+tasks:
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Website
+#-----------------------------------------------------------------------------------------------------------------------
+
+  install-mkdocs:
+    desc: "Installs MkDocs and Material theme"
+    dir: "{{.PROJECT_ROOT}}"
+    cmds:      
+      - python -m pip install --upgrade pip
+      - pip install -e .
+      - pip install -r requirements.txt
+    silent: true
+
+  build:
+    desc: "Builds the website using mkdocs"
+    dir: "{{.PROJECT_ROOT}}"
+    cmds:
+      - mkdir -p site
+      - mkdocs build
+    silent: true
+
+  serve:
+    dir: "{{.PROJECT_ROOT}}"
+    desc: "Serves the website locally"
+    cmds:
+      - mkdocs serve
+    silent: true
+
+  help:
+    desc: "Prints the help message"
+    cmds:
+      - echo "task install-mkdocs"
+      - echo "task build"
+      - echo "task serve"
+    silent: true
+
+  default:
+    cmds: 
+    - task: help

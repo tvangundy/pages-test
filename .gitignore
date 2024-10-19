@@ -1,0 +1,3 @@
+mkdocs_versioning_plugin.egg-info
+__pycache__
+*.cache
