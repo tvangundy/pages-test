@@ -1,1 +1,0 @@
-from .mkdocs_versioning_plugin import VersioningPlugin

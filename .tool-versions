@@ -1,3 +1,0 @@
- # renovate: datasource=github-releases depName=task package=go-task/task
-task 3.38.0
- 
