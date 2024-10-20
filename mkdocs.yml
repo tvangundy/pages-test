@@ -17,7 +17,7 @@ theme:
 
 repo_url: https://github.com/windsor-hotel/cli.git
 
-plugins:
-  - versioning
-  - encryptcontent:
-      global_password: 'letsbuildit'
+# plugins:
+#   - versioning
+#   - encryptcontent:
+#       global_password: 'letsbuildit'
