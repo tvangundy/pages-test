@@ -1,27 +1,27 @@
 site_name: Windsor CLI
 
-site_url: https://tvangundy.github.io/pages-test/
-repo_url: https://github.com/tvangundy/pages-test
+# site_url: https://tvangundy.github.io/pages-test/
+# repo_url: https://github.com/tvangundy/pages-test
 
-# site_url: https://windsor-hotel/.github.io/pages-test/
-# repo_url: https://github.com/windsor-hotel/cli.git
+# # site_url: https://windsor-hotel/.github.io/pages-test/
+# # repo_url: https://github.com/windsor-hotel/cli.git
 
-# nav:
-#   - 'Home': index.html
-#   # - 'Test': test/README.md
+# # nav:
+# #   - 'Home': index.html
+# #   # - 'Test': test/README.md
 
-theme:
-  name: 'material'
-  language: 'en'
-  palette:
-    primary: 'indigo'
-    accent: 'indigo'
-  font:
-    text: 'Roboto'
-    code: 'Roboto Mono'
+# theme:
+#   name: 'material'
+#   language: 'en'
+#   palette:
+#     primary: 'indigo'
+#     accent: 'indigo'
+#   font:
+#     text: 'Roboto'
+#     code: 'Roboto Mono'
 
 
-# plugins:
-#   - versioning
-#   - encryptcontent:
-#       global_password: 'letsbuildit'
+# # plugins:
+# #   - versioning
+# #   - encryptcontent:
+# #       global_password: 'letsbuildit'
