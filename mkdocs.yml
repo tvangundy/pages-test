@@ -10,15 +10,15 @@ repo_url: https://github.com/tvangundy/pages-test
 #   - 'Home': index.html
 #   # - 'Test': test/README.md
 
-# theme:
-#   name: 'material'
-#   language: 'en'
-#   palette:
-#     primary: 'indigo'
-#     accent: 'indigo'
-#   font:
-#     text: 'Roboto'
-#     code: 'Roboto Mono'
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
 
 
 # plugins:
