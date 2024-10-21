@@ -1,11 +1,14 @@
 site_name: Windsor CLI
-docs_dir: docs
 
 site_url: https://tvangundy.github.io/pages-test/
+repo_url: https://github.com/tvangundy/pages-test
+
+# site_url: https://tvangundy.github.io/pages-test/
+# repo_url: https://github.com/windsor-hotel/cli.git
 
 nav:
-  - 'Home': index.md
-  - 'Test': test/README.md
+  - 'Home': index.html
+  # - 'Test': test/README.md
 
 theme:
   name: 'material'
@@ -17,9 +20,6 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
 
-# repo_url: https://github.com/windsor-hotel/cli.git
-
-repo_url: https://github.com/tvangundy/pages-test
 
 # plugins:
 #   - versioning
