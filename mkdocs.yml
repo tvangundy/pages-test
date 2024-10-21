@@ -3,12 +3,12 @@ site_name: Windsor CLI
 site_url: https://tvangundy.github.io/pages-test/
 repo_url: https://github.com/tvangundy/pages-test
 
-# site_url: https://tvangundy.github.io/pages-test/
+# site_url: https://windsor-hotel/.github.io/pages-test/
 # repo_url: https://github.com/windsor-hotel/cli.git
 
-nav:
-  - 'Home': index.html
-  # - 'Test': test/README.md
+# nav:
+#   - 'Home': index.html
+#   # - 'Test': test/README.md
 
 theme:
   name: 'material'
