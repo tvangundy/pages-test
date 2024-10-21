@@ -17,7 +17,9 @@ theme:
     text: 'Roboto'
     code: 'Roboto Mono'
 
-repo_url: https://github.com/windsor-hotel/cli.git
+# repo_url: https://github.com/windsor-hotel/cli.git
+
+repo_url: https://github.com/tvangundy/pages-test
 
 # plugins:
 #   - versioning
