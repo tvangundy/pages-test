@@ -1,6 +1,8 @@
 site_name: Windsor CLI
 docs_dir: docs
 
+site_url: https://tvangundy.github.io/pages-test/
+
 nav:
   - 'Home': index.md
   - 'Test': test/README.md
